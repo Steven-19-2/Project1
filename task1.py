@@ -4,14 +4,6 @@ import random
 from dataclasses import dataclass
 from datetime import date
 import csv
-# first_names = [names.get_first_name() for _ in range(10)]
-# last_names = [names.get_last_name() for _ in range(10)]
-
-# for i in range(20):
-#     fake = Faker()
-#     first_names.append(fake.first_name())
-#     last_names.append(fake.last_name())
-#     print(first_names[i], last_names[i], sep=" ,")
 
 @dataclass
 class Employee:
@@ -20,7 +12,7 @@ class Employee:
     salary: float
     salary_date: str
 
-class Generate_Data(Employee) :   
+class GenerateData(Employee) :   
     employees = [] 
     def generate_employee_data(self):
         self.fake = Faker()
@@ -44,7 +36,7 @@ class Generate_Data(Employee) :
 
     
 if __name__ == "__main__":
-    generator = Generate_Data(0, "", 0.0, date.today())
+    generator = GenerateData(0, "", 0.0, date.today())
     employee_data = generator.generate_employee_data()
     for emp in employee_data:
         print(emp)

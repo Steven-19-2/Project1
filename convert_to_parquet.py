@@ -2,7 +2,7 @@ import pandas as pd
 from dataclasses import dataclass
    
 @dataclass
-class covert_to_parquet:
+class CovertToParquet:
     def convert(self):
         df = pd.read_csv('employees_data1.csv')
         df.to_parquet('employee_data1.parquet', index=False)
@@ -10,6 +10,6 @@ class covert_to_parquet:
 
 
 if __name__ == "__main__":
-    converter = covert_to_parquet()
+    converter = CovertToParquet()
     converter.convert()
     

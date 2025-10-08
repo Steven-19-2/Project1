@@ -1,10 +1,10 @@
 import boto3
-folder_path = "s3://zmx-training-bucketbatch2025/Steven/"
+#folder_path = "s3://zmx-training-bucketbatch2025/Steven/"
 
 s3 = boto3.client('s3')
-bucket_name = 'zmx-training-bucketbatch2025'
-file_name = 'employee_data.parquet'
+BUCKET_NAME = 'zmx-training-bucketbatch2025'
+FILE_NAME = 'employee_data.parquet'
 
-s3.upload_file(file_name, bucket_name, 'Steven/'+file_name)
+s3.upload_file(FILE_NAME, BUCKET_NAME, 'Steven/'+FILE_NAME)
 
 print('file is uploaded')
