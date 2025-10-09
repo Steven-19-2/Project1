@@ -12,19 +12,17 @@ class Employee:
     salary: float
     salary_date: str
 
-class GenerateData(Employee) :   
+class GenerateData :   
     employees = [] 
-    def generate_employee_data(self):
+    def generate_employee_data(self) :
         self.fake = Faker()
         
-        for i in range(100):
-            self.empid= i+1#random.randint(1,1000)
-            self.name= self.fake.name()
-            self.salary = round(random.random() * 1000000, 2)
-            self.salary_date = self.fake.date_between(start_date='-1y', end_date='today')
-            self.employees.append(Employee(self.empid, self.name, self.salary, self.salary_date))
-
-        return self.employees
+        for i in range(10):
+            empid= i+1
+            name= self.fake.name()
+            salary = round(random.random() * 1000000, 2)
+            salary_date = self.fake.date_between(start_date='-1y', end_date='today')
+            self.employees.append(Employee(empid, name, salary, salary_date))
     
     
     def save_data_to_file(self, filename='employees_data1.csv'):
@@ -36,10 +34,10 @@ class GenerateData(Employee) :
 
     
 if __name__ == "__main__":
-    generator = GenerateData(0, "", 0.0, date.today())
-    employee_data = generator.generate_employee_data()
-    for emp in employee_data:
-        print(emp)
+    generator = GenerateData()
+    generator.generate_employee_data()
+    # for emp in generator.employees:
+    #     print(emp)
     generator.save_data_to_file()
             
             
