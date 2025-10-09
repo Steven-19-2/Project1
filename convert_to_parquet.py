@@ -12,4 +12,4 @@ class CovertToParquet:
 if __name__ == "__main__":
     converter = CovertToParquet()
     converter.convert()
-    
+
